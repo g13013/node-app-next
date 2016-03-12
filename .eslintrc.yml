@@ -1,0 +1,16 @@
+extends: 'eslint:recommended'
+plugins:
+  - jasmine
+
+env:
+  node: true
+  es6: true
+  jasmine: true
+
+rules:
+  no-this-before-super: 1
+  no-console: 1
+  require-yield: 1
+  indent:
+    - 2
+    - 2

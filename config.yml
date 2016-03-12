@@ -1,0 +1,12 @@
+#
+server:
+  port: 4000
+
+logs:
+  transports:
+    #file: true
+    console:
+      level: 'info'
+
+db:
+  host: 192.168.99.100

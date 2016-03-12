@@ -1,0 +1,7 @@
+/coverage
+/node_modules
+.*
+!.git*
+!.eslintrc.yml
+!.gitlab-ci.yml
+npm-debug.log

@@ -1,0 +1,47 @@
+{
+  "name": "app-next",
+  "version": "0.0.1-alpha",
+  "description": "Modular Application",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "$(which node) ./lib/index.js",
+    "test": "./node_modules/.bin/eslint lib test && ./node_modules/.bin/istanbul cover --root lib test/run_spec.js"
+  },
+  "keywords": [
+    "app",
+    "koa app",
+    "ES2015",
+    "ES2016"
+  ],
+  "author": "Aboubakr Gasmi",
+  "license": "MIT",
+  "devDependencies": {
+    "benchmark": "^2.1.0",
+    "co": "^4.6.0",
+    "eslint": "^2.2.0",
+    "eslint-plugin-jasmine": "^1.6.0",
+    "istanbul": "^0.4.2",
+    "jasmine": "^2.4.1",
+    "jasmine-spec-reporter": "^2.4.0",
+    "microtime": "^2.0.0",
+    "node-watch": "^0.3.5",
+    "ps-tree": "^1.0.1",
+    "rewire": "^2.5.1"
+  },
+  "dependencies": {
+    "fs-node": "^1.0.0",
+    "http-status": "^0.2.0",
+    "js-yaml": "^3.4.6",
+    "koa": "^1.1.2",
+    "koa-joi-router": "^3.0.0",
+    "merge": "^1.2.0",
+    "mongoose": "^4.3.4",
+    "node-http-error": "^0.2.0",
+    "object-path": "^0.9.2",
+    "winston": "^2.1.1",
+    "yargs": "^3.32.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+before_script:
+  - npm install
+
+stages:
+  - test
+  # - todo: deploy to npm
+  # - todo: deploy using docker
+
+node_4:
+  image: node:4.3
+  stage: test
+  script:
+    - npm test
+
+node_5:
+  image: node:5.6
+  stage: test
+  script:
+    - npm test
