@@ -4,4 +4,5 @@
 !.git*
 !.eslintrc.yml
 !.gitlab-ci.yml
+!.travis.yml
 npm-debug.log
