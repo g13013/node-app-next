@@ -1,6 +1,9 @@
 # AppNext
 
+[![Code Climate](https://codeclimate.com/github/g13013/node-app-next/badges/gpa.svg)](https://codeclimate.com/github/g13013/node-app-next)
+
 A node application
+
 
 **This is 0.x beta software.**
 
