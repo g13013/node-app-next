@@ -1,6 +1,7 @@
 # AppNext
 
 [![Code Climate](https://codeclimate.com/github/g13013/node-app-next/badges/gpa.svg)](https://codeclimate.com/github/g13013/node-app-next)
+[![Coverage Status](https://coveralls.io/repos/github/g13013/node-app-next/badge.svg?branch=master)](https://coveralls.io/github/g13013/node-app-next?branch=master)
 
 A node application
 
