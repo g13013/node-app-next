@@ -5,4 +5,5 @@
 !.eslintrc.yml
 !.gitlab-ci.yml
 !.travis.yml
+!.coveralls.yml
 npm-debug.log
