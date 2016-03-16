@@ -22,7 +22,7 @@ describe('ModuleAppInterface', function () {
     app.Router = jasmine.createSpy('appRouter').and.returnValue(router);
     app.Schema = jasmine.createSpy('app.Schema');
   });
-  
+
   describe('#generateIndexRouteHandler', function () {
     it ('it returns a generator function', function() {
       var inter = new ModuleAppInterface('my_module', desc, app);
@@ -67,9 +67,9 @@ describe('ModuleAppInterface', function () {
       var schema = new app.Schema();
       var inter = new ModuleAppInterface('my_module', desc, app);
       inter.model('model_name', schema, 3, 4);
-      expect(app.db.model).toHaveBeenCalledWith('ModelName', schema, 3, 4);
-      inter.model('model_name', false, 3, 4);
-      expect(app.db.model).toHaveBeenCalledWith('ModelName', false, 3, 4);
+      expect(app.db.model).toHaveBeenCalledWith('MyModuleModelName', schema, 3, 4);
+      inter.model('model_name_2', false, 3, 4);
+      expect(app.db.model).toHaveBeenCalledWith('MyModuleModelName2', false, 3, 4);
     });
 
     it('creates new instance of Schema if schema is object', function () {
@@ -85,10 +85,10 @@ describe('ModuleAppInterface', function () {
         this.prop = 'instance';
       });
 
-      let obj = new ModuleAppInterface('my_module', desc, app);
-      obj.model('name', schema);
-      expect(obj.schemas.Name).toEqual(jasmine.objectContaining({prop: 'instance'}));
-      expect(app.schemas.my_module).toEqual(jasmine.objectContaining({Name: obj.schemas.Name}));
+      let obj = new ModuleAppInterface('module', desc, app);
+      obj.model('model_name', schema);
+      expect(obj.schemas.ModelName).toEqual(jasmine.objectContaining({prop: 'instance'}));
+      expect(app.schemas.module).toEqual(jasmine.objectContaining({ModelName: obj.schemas.ModelName}));
     });
   });
 
