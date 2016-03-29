@@ -92,6 +92,11 @@ describe('Application', function () {
       var interface1 = {logger: new this.TestLogger(), router: this.newRouter()}
       var interface2 = {logger: new this.TestLogger(), router: this.newRouter()}
       var app = new Application();
+      var mod1Config = {};
+      var mod2Config = {};
+
+      app.config.set('modules.appModule', mod1Config);
+      app.config.set('modules.anotherAppModule', mod2Config);
 
       spyOn(contextProvider, 'middlewareFor');
       app.modulesMap.descriptors = {
@@ -105,14 +110,15 @@ describe('Application', function () {
       interface2.router.middleware.and.returnValue('interface2 middleware');
       contextProvider.middlewareFor.and.returnValues('ctx 1 middleware', 'ctx 2 middleware');
       app.setupModules();
+
       expect(app.modules.appModule).toBe(mod1);
       expect(app.modules.anotherAppModule).toBe(mod2);
       expect(app.api.appModule).toBe(mod1.api);
       expect(app.api.anotherAppModule).toBe(mod2.api);
       expect(app.ModuleAppInterface).toHaveBeenCalledWith('appModule', app.modulesMap.descriptors.mod1, app);
       expect(app.ModuleAppInterface).toHaveBeenCalledWith('anotherAppModule', app.modulesMap.descriptors.mod2, app);
-      expect(Mod1).toHaveBeenCalledWith(interface1);
-      expect(Mod2).toHaveBeenCalledWith(interface2);
+      expect(Mod1).toHaveBeenCalledWith(interface1, mod1Config);
+      expect(Mod2).toHaveBeenCalledWith(interface2, mod2Config);
       expect(app.router.use).toHaveBeenCalledWith('/appModule', 'ctx 1 middleware', 'interface1 middleware');
       expect(app.router.use).toHaveBeenCalledWith('/anotherAppModule', 'ctx 2 middleware', 'interface2 middleware');
       expect(contextProvider.middlewareFor).toHaveBeenCalledWith({logger: interface1.logger, module: mod1});
