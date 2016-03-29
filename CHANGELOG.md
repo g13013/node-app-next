@@ -2,6 +2,7 @@
 
 ## 0.0.1-alpha.4
 
+*   Update RAEDME.md
 *   Modules are provided with their config on initialisation
 
 ## 0.0.1-alpha.3
